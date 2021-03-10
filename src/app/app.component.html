@@ -18,12 +18,12 @@
       <svg:text alignment-baseline="central" [attr.x]="10" [attr.y]="node.dimension.height / 2" (click)="test('LOAN')">
         {{node.label}}
       </svg:text> -->
-      <rect x="0" y="0" width="33" height="33" rx="4" fill="#369BB0" (click)="test('Add')"></rect>
-      <path transform="translate(-30 -30)" xmlns="http://www.w3.org/2000/svg" d="M45.2513 52.7606V47.273H40V45.4876H45.2513V40H47.2468V45.4876H52.4981V47.273H47.2468V52.7606H45.2513Z" fill="#0C0B0B"/>
-      <rect x="172" y="0" width="33" height="33" rx="4" fill="#8FE1A1" (click)="expandCollapseNode(node)"/>
-      <path *ngIf="!node.isRootCollapsed"  transform="translate(-30 -30)" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M225 42L225 50L229.444 46.0036L225 42Z" fill="black"/>
-      <path *ngIf="node.isRootCollapsed"  transform="translate(-30 -85)" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M231 99H223L226.996 103.444L231 99Z" fill="black"/>
-      <rect x="33" y="0" width="155" height="33" rx="4" fill="#EEF0F5"/>
+      <rect class="cursor-pointer" x="0" y="0" width="33" height="33" rx="4" fill="#369BB0" (click)="test('Add')"></rect>
+      <path transform="translate(-30 -30)" pointer-events="none" xmlns="http://www.w3.org/2000/svg" d="M45.2513 52.7606V47.273H40V45.4876H45.2513V40H47.2468V45.4876H52.4981V47.273H47.2468V52.7606H45.2513Z" fill="#0C0B0B"/>
+      <rect class="cursor-pointer" x="172" y="0" width="33" height="33" rx="4" fill="#8FE1A1" (click)="expandCollapseNode(node)"/>
+      <path *ngIf="!node.isRootCollapsed" pointer-events="none"  transform="translate(-30 -30)" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M225 42L225 50L229.444 46.0036L225 42Z" fill="black"/>
+      <path *ngIf="node.isRootCollapsed" pointer-events="none" transform="translate(-30 -85)" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M231 99H223L226.996 103.444L231 99Z" fill="black"/>
+      <rect  x="33" y="0" width="155" height="33" rx="4" fill="#EEF0F5"/>
       <svg:text alignment-baseline="middle" x="38" [attr.y]="10"  font-size="8" font-weight="bold">
         {{node.label}}
       </svg:text>

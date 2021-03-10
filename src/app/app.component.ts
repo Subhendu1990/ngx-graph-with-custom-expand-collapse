@@ -209,15 +209,28 @@ export class AppComponent implements OnInit {
     children.forEach(node => {
       node.isCollapsed = doCollapse;
       if(node.children){
-        this.expandCollapseChildNodes(node.children,doCollapse);
+        this.expandCollapseChildNodes(node.children,doCollapse ? doCollapse : node.isRootCollapsed);
       }
     });
   }
   expandAndCollapseEdges(doCollapse){
-    let collapsedNodes = this.nodes.filter(n => n.isCollapsed == doCollapse);
+    let collapsedNodes = this.nodes.filter(n => {
+      /* if(doCollapse){
+        return !!n.isCollapsed == doCollapse;
+      } else {
+        return !!n.isCollapsed == doCollapse;
+      } */
+      return !!n.isCollapsed == doCollapse;
+    });
     this.links.forEach( l => {
-      if(collapsedNodes.some(cn => cn.id == l.source || cn.id == l.target)){
-        l.model.isCollapsed = doCollapse;
+      if(doCollapse){
+        if(collapsedNodes.some(cn => cn.id == l.source || cn.id == l.target)){
+          l.model.isCollapsed = doCollapse;
+        } 
+      } else  {
+        if(collapsedNodes.some(cn => cn.id == l.target) ){
+          l.model.isCollapsed = doCollapse;
+        }
       }
     });
     this.links = [...this.links];
