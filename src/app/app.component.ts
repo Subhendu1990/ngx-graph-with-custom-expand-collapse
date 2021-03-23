@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
     id: 'first',
     label: 'ICICI BANK  |  CURRENT ACCOUNT ',
     label1:'A/C NO 12345667087',
-    type:'ACC',
+    type:'CLIENT',
     children:[
       {
         id: 'second',
