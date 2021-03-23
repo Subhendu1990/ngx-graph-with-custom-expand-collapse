@@ -90,7 +90,7 @@ export class DagreNodesOnlyLayout implements Layout {
     const dir = sourceNode.position[rankAxis] <= targetNode.position[rankAxis] ? -1 : 1;
     const startingPoint = {
       [orderAxis]: sourceNode.position[orderAxis],
-      [rankAxis]: sourceNode.position[rankAxis] + 30 - dir * (sourceNode.dimension[rankDimension] / 2)
+      [rankAxis]: sourceNode.position[rankAxis]  - dir * (sourceNode.dimension[rankDimension] / 2)
     };
     const endingPoint = {
       [orderAxis]: targetNode.position[orderAxis],

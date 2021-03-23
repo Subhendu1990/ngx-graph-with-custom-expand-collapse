@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
         id: 'second',
         label: 'AXIS BANK  |  SAVINGS ACCOUNT ',
         label1:'A/C NO 12345667087',
-        type:'ACC',
+        type:'BANK_STATEMENT',
         children:[
           {
             id: 'fourth',
