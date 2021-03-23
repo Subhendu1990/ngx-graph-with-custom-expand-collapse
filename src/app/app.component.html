@@ -143,10 +143,13 @@
   </ng-template>
   <ng-template #linkTemplate let-link>
     <svg:g class="edge" *ngIf="!link.model.isCollapsed">
-      <svg:path class="line" stroke="#1477F8"></svg:path>
+      <svg:path class="line" stroke="#1477F8" marker-end="url(#arrow)"></svg:path>
     </svg:g>
   </ng-template>
   <ng-template #defsTemplate>
+    <svg:marker id="arrow" viewBox="0 -5 10 10" refX="8" refY="0" markerWidth="4" markerHeight="4" orient="auto">
+      <svg:path d="M0,-5L10,0L0,5" class="arrow-head" fill="#1477F8" />
+    </svg:marker>
     <clipPath id="clip0">
       <svg:rect width="13" height="16" fill="white" transform="translate(31 29)"/>
     </clipPath>
