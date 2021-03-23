@@ -19,12 +19,18 @@
         {{node.label}}
       </svg:text> -->
       <text x="0" y="10" alignment-baseline="middle"  textLength="170" font-size="10" fill="transparent">fake text</text>
-      <rect class="cursor-pointer" x="0" y="0" width="33" height="33" rx="4" fill="#369BB0" (click)="test('Add')"></rect>
+      <svg:g filter="url(#filter0_dd)">
+        <rect class="cursor-pointer" x="0" y="0" width="33" height="33" rx="4" fill="#369BB0" (click)="test('Add')"></rect>
+      </svg:g>
       <path transform="translate(-30 -30)" pointer-events="none" xmlns="http://www.w3.org/2000/svg" d="M45.2513 52.7606V47.273H40V45.4876H45.2513V40H47.2468V45.4876H52.4981V47.273H47.2468V52.7606H45.2513Z" fill="#0C0B0B"/>
-      <rect class="cursor-pointer" x="172" y="0" width="33" height="33" rx="4" fill="#8FE1A1" (click)="expandCollapseNode(node)"/>
+      <svg:g filter="url(#filter0_dd)">
+        <rect class="cursor-pointer" x="172" y="0" width="33" height="33" rx="4" fill="#8FE1A1" (click)="expandCollapseNode(node)"/>
+      </svg:g>
       <path *ngIf="!node.isRootCollapsed" pointer-events="none"  transform="translate(-30 -30)" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M225 42L225 50L229.444 46.0036L225 42Z" fill="black"/>
       <path *ngIf="node.isRootCollapsed" pointer-events="none" transform="translate(-30 -85)" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M231 99H223L226.996 103.444L231 99Z" fill="black"/>
-      <rect  x="33" y="0" width="155" height="33" rx="4" fill="#EEF0F5"/>
+      <svg:g filter="url(#filter0_dd)">
+        <rect  x="33" y="0" width="155" height="33" rx="4" fill="#EEF0F5"/>
+      </svg:g>
       <svg:text alignment-baseline="middle" x="38" [attr.y]="10"  font-size="8" font-weight="bold">
         {{node.label}}
       </svg:text>
@@ -43,7 +49,7 @@
       <svg:text alignment-baseline="central" [attr.x]="10" [attr.y]="node.dimension.height / 2" (click)="test('DOC')">
         {{node.label}}
       </svg:text> -->
-      <svg:g>
+      <svg:g filter="url(#filter0_dd)">
         <rect x="0" y="0" width="193" height="21" rx="3.46988" fill="#FA9705"/>
       </svg:g>
       <text x="25" y="12.5" alignment-baseline="middle" font-size="8">Sep 2020 - Aug 2020</text> 
@@ -78,7 +84,7 @@
       </svg:g>
     </svg:g>  
     <svg:g class="node" *ngIf="!node.isCollapsed && node.type == 'BANK_STATEMENT'">
-      <svg:g>
+      <svg:g filter="url(#filter2_dd)">
         <rect x="0" y="0" width="102" height="67" rx="4" fill="#EEF0F5"/>
         <text x="0" y="10" alignment-baseline="middle" font-size="10" textLength="67" fill="transparent">fake text</text>
       </svg:g>
@@ -118,8 +124,10 @@
       </g> 
     </svg:g> 
     <svg:g class="node" *ngIf="!node.isCollapsed && node.type == 'CLIENT'">
-      <rect x="0" y="0" width="207" height="67" rx="4" fill="#27BFDD"/>
-      <text x="0" y="10" alignment-baseline="middle"  textLength="172" font-size="10" fill="transparent">fake text</text>
+      <svg:g filter="url(#filter1_dd)">
+        <rect x="0" y="0" width="207" height="67" rx="4" fill="url(#paint0_linear)"/>
+        <text x="0" y="10" alignment-baseline="middle"  textLength="172" font-size="10" fill="transparent">fake text</text>
+      </svg:g>
       <text x="5" y="15" alignment-baseline="middle" font-size="9" fill="#fff">
         CLIENT ID: 1234567890
       </text>
@@ -150,6 +158,10 @@
     <svg:marker id="arrow" viewBox="0 -5 10 10" refX="8" refY="0" markerWidth="4" markerHeight="4" orient="auto">
       <svg:path d="M0,-5L10,0L0,5" class="arrow-head" fill="#1477F8" />
     </svg:marker>
+    <svg:linearGradient id="paint0_linear" x1="37.8857" y1="34.1476" x2="74.5519" y2="144.176" gradientUnits="userSpaceOnUse">
+      <svg:stop stop-color="#27BFDD"/>
+      <svg:stop offset="1" stop-color="#1C8FA6"/>
+      </svg:linearGradient>
     <clipPath id="clip0">
       <svg:rect width="13" height="16" fill="white" transform="translate(31 29)"/>
     </clipPath>
@@ -162,7 +174,7 @@
     <clipPath id="clip3">
       <svg:rect width="11" height="11" fill="white" transform="translate(203 31)"/>
     </clipPath>
-    <filter id="filter0_dd" x="0.975904" y="0.975904" width="245.048" height="73.0482" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <svg:filter id="filter0_dd" x="0.975904" y="0.975904" width="245.048" height="73.0482" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
       <svg:feFlood flood-opacity="0" result="BackgroundImageFix"/>
       <svg:feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
       <svg:feOffset dx="8.6747" dy="8.6747"/>
@@ -175,8 +187,36 @@
       <svg:feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0"/>
       <svg:feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow"/>
       <svg:feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape"/>
-    </filter>
-    <filter id="dropshadow" height="130%">
+    </svg:filter>
+    <svg:filter  id="filter1_dd" x="0" y="0" width="267" height="127" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dx="10" dy="10"/>
+      <feGaussianBlur stdDeviation="10"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.501961 0 0 0 0 0.501961 0 0 0 0 0.501961 0 0 0 0.5 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dx="-10" dy="-10"/>
+      <feGaussianBlur stdDeviation="10"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0"/>
+      <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape"/>
+    </svg:filter>
+    <svg:filter id="filter2_dd" x="0" y="0" width="162" height="127" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dx="10" dy="10"/>
+      <feGaussianBlur stdDeviation="10"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.501961 0 0 0 0 0.501961 0 0 0 0 0.501961 0 0 0 0.5 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dx="-10" dy="-10"/>
+      <feGaussianBlur stdDeviation="10"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0"/>
+      <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape"/>
+      </svg:filter>
+    <svg:filter id="dropshadow" height="130%">
       <svg:feGaussianBlur in="SourceAlpha" stdDeviation="3"/> <!-- stdDeviation is how much to blur -->
       <svg:feOffset dx="2" dy="2" result="offsetblur"/> <!-- how much to offset -->
       <svg:feComponentTransfer>
@@ -186,12 +226,12 @@
         <svg:feMergeNode/> <!-- this contains the offset blurred image -->
         <svg:feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->
       </svg:feMerge>
-    </filter>
-    <filter id="f2" x="0" y="0" width="400" height="40">
+    </svg:filter>
+    <svg:filter id="f2" x="0" y="0" width="400" height="40">
       <svg:feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
       <svg:feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
       <svg:feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
-    </filter>
+    </svg:filter>
   </ng-template>
 </ngx-graph>
 </div>
