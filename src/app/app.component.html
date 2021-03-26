@@ -85,7 +85,7 @@
     </svg:g>  
     <svg:g class="node" *ngIf="!node.isCollapsed && node.type == 'BANK_STATEMENT'">
       <svg:g filter="url(#filter2_dd)">
-        <rect x="0" y="0" width="102" height="67" rx="4" fill="#EEF0F5"/>
+        <rect x="0" y="0" width="102" height="67" rx="4" fill="#EEF0F5" stroke="#d7d7d9" stroke-width="0.2"/>
         <text x="0" y="10" alignment-baseline="middle" font-size="10" textLength="67" fill="transparent">fake text</text>
       </svg:g>
       <text x="5" y="10" alignment-baseline="middle" font-size="9" font-weight="bold" fill="#1D2433">
@@ -102,14 +102,14 @@
       <text x="21.5" y="44" alignment-baseline="middle" text-anchor="middle" font-size="5" fill="#607d8b">
         Reviewed
       </text>
-      <g transform="translate(-30 -30)">
+      <g transform="translate(-30 -30)" filter="url(#filter3_dd)">
         <rect x="35" y="78" width="33" height="12" rx="2" fill="#8FE1A1"/>
       </g>
       <text x="21.5" y="55" alignment-baseline="middle" text-anchor="middle" font-size="7.77" fill="#1D2433">
         12/12
       </text>
       
-      <g transform="translate(-30 -30)">
+      <g transform="translate(-30 -30)" filter="url(#filter4_dd)">
         <rect x="101" y="71" width="23" height="21" rx="2" fill="#8FE1A1"/>
       </g>
       
@@ -174,16 +174,16 @@
     <clipPath id="clip3">
       <svg:rect width="11" height="11" fill="white" transform="translate(203 31)"/>
     </clipPath>
-    <svg:filter id="filter0_dd" x="0.975904" y="0.975904" width="245.048" height="73.0482" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <svg:filter id="filter0_dd" x="0" y="0" width="245.048" height="73.0482" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
       <svg:feFlood flood-opacity="0" result="BackgroundImageFix"/>
       <svg:feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
       <svg:feOffset dx="8.6747" dy="8.6747"/>
-      <svg:feGaussianBlur stdDeviation="8.6747"/>
+      <svg:feGaussianBlur stdDeviation="6"/>
       <svg:feColorMatrix type="matrix" values="0 0 0 0 0.501961 0 0 0 0 0.501961 0 0 0 0 0.501961 0 0 0 0.5 0"/>
       <svg:feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
       <svg:feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
       <svg:feOffset dx="-8.6747" dy="-8.6747"/>
-      <svg:feGaussianBlur stdDeviation="8.6747"/>
+      <svg:feGaussianBlur stdDeviation="6"/>
       <svg:feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0"/>
       <svg:feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow"/>
       <svg:feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape"/>
@@ -192,7 +192,7 @@
       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
       <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
       <feOffset dx="10" dy="10"/>
-      <feGaussianBlur stdDeviation="10"/>
+      <feGaussianBlur stdDeviation="6"/>
       <feColorMatrix type="matrix" values="0 0 0 0 0.501961 0 0 0 0 0.501961 0 0 0 0 0.501961 0 0 0 0.5 0"/>
       <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
       <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
@@ -206,7 +206,7 @@
       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
       <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
       <feOffset dx="10" dy="10"/>
-      <feGaussianBlur stdDeviation="10"/>
+      <feGaussianBlur stdDeviation="6"/>
       <feColorMatrix type="matrix" values="0 0 0 0 0.501961 0 0 0 0 0.501961 0 0 0 0 0.501961 0 0 0 0.5 0"/>
       <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
       <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
@@ -215,22 +215,34 @@
       <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0"/>
       <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow"/>
       <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape"/>
-      </svg:filter>
-    <svg:filter id="dropshadow" height="130%">
-      <svg:feGaussianBlur in="SourceAlpha" stdDeviation="3"/> <!-- stdDeviation is how much to blur -->
-      <svg:feOffset dx="2" dy="2" result="offsetblur"/> <!-- how much to offset -->
-      <svg:feComponentTransfer>
-        <svg:feFuncA type="linear" slope="0.5"/> <!-- slope is the opacity of the shadow -->
-      </svg:feComponentTransfer>
-      <svg:feMerge> 
-        <svg:feMergeNode/> <!-- this contains the offset blurred image -->
-        <svg:feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->
-      </svg:feMerge>
     </svg:filter>
-    <svg:filter id="f2" x="0" y="0" width="400" height="40">
-      <svg:feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
-      <svg:feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
-      <svg:feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    <svg:filter xmlns="http://www.w3.org/2000/svg" id="filter3_dd" x="31" y="78" width="41" height="20" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dy="4"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dy="4"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+      <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape"/>
+    </svg:filter>
+    <svg:filter xmlns="http://www.w3.org/2000/svg" id="filter4_dd" x="97" y="71" width="31" height="29" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dy="4"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dy="4"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+      <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape"/>
     </svg:filter>
   </ng-template>
 </ngx-graph>
