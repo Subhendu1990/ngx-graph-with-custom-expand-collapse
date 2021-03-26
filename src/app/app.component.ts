@@ -34,21 +34,25 @@ export class AppComponent implements OnInit {
                 id: 'sixth',
                 label: 'F',
                 type:'DOC',
+                docType:'UNPROCESSED'
               },
               {
                 id: 'seventh',
                 label: 'G',
                 type:'DOC',
+                docType:'SUBMITTED'
               },
               {
                 id: 'eighth',
                 label: 'H',
                 type:'DOC',
+                docType:'PROCESSED'
               },
               {
                 id: 'nineth',
                 label: 'H',
                 type:'DOC',
+                docType:'REVIEWED'
               }
             ]
           }
@@ -70,10 +74,23 @@ export class AppComponent implements OnInit {
                 id: 'tenth',
                 label: 'E',
                 type:'DOC',
+                docType:'SUBMITTED'
               }
             ]
           }
         ]
+      },
+      {
+        id: 'eleventh',
+        label: 'SBI BANK  |  CURRENT ACCOUNT ',
+        label1:'A/C NO 12345667087',
+        type:'LOAN'
+      },
+      {
+        id: 'twelveth',
+        label: 'SBI BANK  |  CURRENT ACCOUNT ',
+        label1:'A/C NO 12345667087',
+        type:'LOAN'
       }
     ]
   }];
@@ -196,6 +213,7 @@ export class AppComponent implements OnInit {
             source: element.id,
             target: child.id,
             label:'',
+            type:child.type=='LOAN' ? 'GREEN':'BLUE',
             model:{isCollapsed: false}
           }
           this.links.push(link);
