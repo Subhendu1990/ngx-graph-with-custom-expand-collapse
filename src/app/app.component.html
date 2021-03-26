@@ -6,6 +6,8 @@
   [nodes]="nodes"
   [curve]="curve"
   [layout]="layout"
+  [autoZoom]="true"
+  [autoCenter]="true"
 >
   <ng-template #nodeTemplate let-node>
     <svg:g class="node" *ngIf="!node.isCollapsed && node.type == 'ACC'">
