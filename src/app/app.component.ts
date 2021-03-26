@@ -58,12 +58,20 @@ export class AppComponent implements OnInit {
         id: 'third',
         label: 'SBI BANK  |  CURRENT ACCOUNT ',
         label1:'A/C NO 12345667087',
-        type:'ACC',
+        type:'FIN_STATEMENT',
         children:[
           {
             id: 'fifth',
-            label: 'E',
-            type:'DOC',
+            label: 'SBI BANK  |  CURRENT ACCOUNT ',
+            label1:'A/C NO 12345667087',
+            type:'ACC',
+            children:[
+              {
+                id: 'tenth',
+                label: 'E',
+                type:'DOC',
+              }
+            ]
           }
         ]
       }

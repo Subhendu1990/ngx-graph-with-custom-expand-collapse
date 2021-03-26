@@ -83,13 +83,14 @@
         <path d="M210.119 39.278C210.119 40.1394 210.119 41.0054 210.119 41.8668C210.119 42.1616 209.828 42.3643 209.565 42.2538C209.401 42.1847 209.311 42.0557 209.307 41.876C209.302 41.6227 209.307 41.3693 209.307 41.116C209.307 39.6419 209.307 38.1725 209.307 36.6985C209.307 36.5465 209.354 36.4267 209.476 36.3392C209.602 36.2517 209.743 36.2286 209.884 36.2977C210.029 36.3714 210.114 36.4912 210.119 36.657C210.123 36.8966 210.119 37.1315 210.119 37.371C210.119 38.0067 210.119 38.6424 210.119 39.278Z" fill="#979797"/>
       </svg:g>
     </svg:g>  
-    <svg:g class="node" *ngIf="!node.isCollapsed && node.type == 'BANK_STATEMENT'">
+    <svg:g class="node" *ngIf="!node.isCollapsed && (node.type == 'BANK_STATEMENT') || (node.type == 'FIN_STATEMENT')">
       <svg:g filter="url(#filter2_dd)">
         <rect x="0" y="0" width="102" height="67" rx="4" fill="#EEF0F5" stroke="#d7d7d9" stroke-width="0.2"/>
         <text x="0" y="10" alignment-baseline="middle" font-size="10" textLength="67" fill="transparent">fake text</text>
       </svg:g>
       <text x="5" y="10" alignment-baseline="middle" font-size="9" font-weight="bold" fill="#1D2433">
-        Bank 
+        <tspan *ngIf="node.type == 'BANK_STATEMENT'">Bank</tspan> 
+        <tspan *ngIf="node.type == 'FIN_STATEMENT'">Financial</tspan> 
         <tspan x="5" y="24">Statements</tspan>
       </text>
       <text x="60" y="10" alignment-baseline="middle" font-size="8" fill="#607d8b">
